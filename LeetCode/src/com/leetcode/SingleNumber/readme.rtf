@@ -1,0 +1,18 @@
+﻿一、原题目内容  http://oj.leetcode.com/problems/single-number/ 
+Given an array of integers, every element appears twice except for one. Find that single one.
+
+Note:
+Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+
+二、中文题目内容
+给你一个整数数组，除了一个元素只出现一次之外，其它元素都出现两次，找出只出现一次的元素。
+
+实现一个时间复杂度为O(n),空间复杂度为O(1)的算法。
+
+三、算法设计和分析
+
+Solution: (optimal)
+用异或，相同两个数异或等于0。把数组每个元素按顺序异或，即等到单一那个数。时间复杂度O(n),空间复杂度O(1);
+
+Solution2：
+用Set，把数组每个元素按顺序添加，如果添加不成功（已存在于Set中），把这个数移除。最后剩下一个即为答案。时间复杂度O(n),空间复杂度O(n);

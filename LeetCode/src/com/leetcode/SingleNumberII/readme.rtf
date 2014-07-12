@@ -1,0 +1,19 @@
+一、原题目内容 http://oj.leetcode.com/problems/single-number-ii/ 
+Given an array of integers, every element appears three times except for one. Find that single one.
+
+Note:
+Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+
+二、中文题目内容
+给你一个整数数组，除一个元素出现一次之外，每个元素出现三次，请找出只出现一次的元素。
+
+三、算法设计
+
+Solution： (optimal)
+int为32位。把所有整数的每一个bit相加，然后%3，要么为1要么为0，该值为结果相应的bit。时间复杂度O(n),空间复杂度O(1);
+
+Solution2： 
+用hashmap记录每个数出现次数； 时间复杂度O(n),空间复杂度O(n);
+
+Solution3： 
+用两个集合，先往集合1加，加不成功就加集合2，最后集合1-集合2，即为答案; 时间复杂度O(n),空间复杂度O(n);
