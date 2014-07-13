@@ -1,4 +1,5 @@
-一、原题目内容
+Maximum Depth of Binary Tree 43.3% 二叉树 
+一、原题目内容 http://oj.leetcode.com/problems/maximum-depth-of-binary-tree/ 
 Given a binary tree, find its maximum depth.
 
 The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
@@ -14,4 +15,9 @@ The maximum depth is the number of nodes along the longest path from the root no
 
 Solution: 递归
 
-Solution2: 非递归解法一般采用层序遍历(相当于图的BFS），因为如果使用其他遍历方式也需要同样的复杂度O(n). 层序遍历理解上直观一些，维护到最后的level便是树的深度。
+Solution2： BFS，不用HashMap，直接统计层数。
+
+Solution3: 非递归解法一般采用层序遍历(相当于图的BFS），维护到最后的level便是树的深度。用HashMap存储每个点所在层数
+
+
+参考题目： Minimum Depth of Binary Tree

@@ -1,0 +1,19 @@
+Minimum Depth of Binary Tree 28.9% 二叉树
+一、原题目内容 http://oj.leetcode.com/problems/minimum-depth-of-binary-tree/ 
+Given a binary tree, find its minimum depth.
+
+The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+
+
+
+二、中文题目内容
+给你一颗二叉树，找到该二叉树的最小深度。
+
+最小深度是从该二叉树的root与所有叶子节点形成的路径中最短路径上节点的个数。
+
+三、算法设计与分析
+广度优先遍历：把二叉树看成一个图，广度优先遍历，一层一层的向下找！
+
+递归解决方案：minH(root)=min{minH(root->left),minH(root->right)}+1;   
+
+参考题目：Maximum Depth of Binary Tree      
