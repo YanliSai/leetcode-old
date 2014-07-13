@@ -1,0 +1,17 @@
+一、原题目内容
+Given a binary tree, find its maximum depth.
+
+The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+
+
+
+二、中文题目内容
+给你一棵二叉树，找到它最大的深度。
+
+最大的深度是指从该二叉树的根节点到叶子节点的路径中最长路径上节点的个数。
+
+三、算法设计与分析
+
+Solution: 递归
+
+Solution2: 非递归解法一般采用层序遍历(相当于图的BFS），因为如果使用其他遍历方式也需要同样的复杂度O(n). 层序遍历理解上直观一些，维护到最后的level便是树的深度。
