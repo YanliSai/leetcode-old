@@ -2,8 +2,8 @@ package com.leetcode.MaximumDepthOfBinaryTree;
 
 import com.leetcode.core.TreeNode;
 
-public class Solution {
-	// AC - Recursion - time: O(n)
+//AC - Recursion - time: O(n)
+public class Solution {   
     public int maxDepth(TreeNode root) {
         if (root == null) {
             return 0;
