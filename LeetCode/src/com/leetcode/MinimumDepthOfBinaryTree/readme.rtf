@@ -12,8 +12,10 @@ The minimum depth is the number of nodes along the shortest path from the root n
 最小深度是从该二叉树的root与所有叶子节点形成的路径中最短路径上节点的个数。
 
 三、算法设计与分析
-广度优先遍历：把二叉树看成一个图，广度优先遍历，一层一层的向下找！
 
-递归解决方案：minH(root)=min{minH(root->left),minH(root->right)}+1;   
+这道题是树的题目，其实跟Maximum Depth of Binary Tree非常类似，只是这道题因为是判断最小深度，所以必须增加一个叶子的判断（因为如果一个节点如果只有左子树或者右子树，我们不能取它左右子树中小的作为深度，因为那样会是0，我们只有在叶子节点才能判断深度，而在求最大深度的时候，因为一定会取大的那个，所以不会有这个问题）
+
+Solution: 递归
+Solution2: BFS. 逐层遍历。当一个点无子节点时，它所在的层数即为最短路径。
 
 参考题目：Maximum Depth of Binary Tree      
