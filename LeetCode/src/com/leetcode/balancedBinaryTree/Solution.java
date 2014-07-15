@@ -2,7 +2,7 @@ package com.leetcode.balancedBinaryTree;
 
 import com.leetcode.core.TreeNode;
 
-//AC - Time: O(n), Space: O(nlog(n))
+//AC - Time: O(n), Space: O(log(n))
 public class Solution {
     public boolean isBalanced(TreeNode root) {
         return height(root) != -1;
