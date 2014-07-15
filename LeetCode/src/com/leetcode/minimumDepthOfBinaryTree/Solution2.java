@@ -1,4 +1,4 @@
-package com.leetcode.MinimumDepthOfBinaryTree;
+package com.leetcode.minimumDepthOfBinaryTree;
 
 import java.util.LinkedList;
 
