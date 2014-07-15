@@ -1,0 +1,29 @@
+Balanced Binary Tree 32.1% 二叉树 
+一、原题目内容 http://oj.leetcode.com/problems/balanced-binary-tree/ 
+Given a binary tree, determine if it is height-balanced.
+
+For this problem, a height-balanced binary tree is defined as a binary tree in which the depth of the two subtrees of every node never differ by more than 1.
+
+
+
+二、中文题目内容
+给你一颗二叉树，判断该二叉树的高度是否平衡。
+
+只针对此题，一棵高度平衡的二叉树是指该二叉树中任何一个节点的左子树和右子树的高度之差不会大于1或小于-1.
+
+
+
+           
+
+三、算法设计
+
+from (http://blog.csdn.net/linhuanmars/article/details/23731355)
+这道题是树操作的题目，还是老套路用递归。这道题是求解树是否平衡，还是有一些小技巧的。要判断树是否平衡，根据题目的定义，深度是比需的信息，所以我们必须维护深度，另一方面我们又要返回是否为平衡树，那么对于左右子树深度差的判断也是必要的。这里我们用一个整数来做返回值，而0或者正数用来表示树的深度，而-1则用来比较此树已经不平衡了，如果已经不平衡，则递归一直返回-1即可，也没有继续比较的必要了，否则就利用返回的深度信息看看左右子树是不是违反平衡条件，如果违反返回-1，否则返回左右子树深度大的加一作为自己的深度即可。算法的时间是一次树的遍历O(n)，空间是栈高度O(logn)。
+
+
+递归处理子树，返回子树的高度。这里有个技巧，如何利用返回的高度来判断最后的结果？如果一棵子树不平衡，但是其父节点可能是平衡的，此时需要识别整棵树也是不平衡的，所以最后的结果不是根据最初的root的左右高度来判断，而是整个过程中判断？如何保存结果？
+
+Solution: Optimal. 一次递归。判断一个树的高度，只返回-1， 0， 1三个值。-1代表不平衡。时间O（n），空间O（nlog(n))
+
+
+Solution2: 两次递归；一次递归计算每个点高度。二次递归计算所有子树左右高度差。时间O(n^2），空间O((nlog(n))^2)???
