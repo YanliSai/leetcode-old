@@ -1,4 +1,4 @@
-package com.leetcode.MaximumDepthOfBinaryTree;
+package com.leetcode.maximumDepthOfBinaryTree;
 
 import java.util.HashMap;
 import java.util.LinkedList;
