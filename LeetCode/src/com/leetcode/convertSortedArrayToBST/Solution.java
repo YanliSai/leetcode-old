@@ -2,7 +2,7 @@ package com.leetcode.convertSortedArrayToBST;
 
 import com.leetcode.core.TreeNode;
 
-// AC - Time: O(n), Space: O(nlog(n))
+// AC - Time: O(n), Space: O(log(n))
 public class Solution {
     public TreeNode sortedArrayToBST(int[] num) {
         return sortedArrayToBST(num, 0, num.length - 1);
