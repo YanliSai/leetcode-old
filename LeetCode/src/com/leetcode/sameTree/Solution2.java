@@ -1,4 +1,4 @@
-package com.leetcode.SameTree;
+package com.leetcode.sameTree;
 
 import java.util.LinkedList;
 
