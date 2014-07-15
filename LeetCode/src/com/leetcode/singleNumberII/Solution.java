@@ -1,4 +1,4 @@
-package com.leetcode.SingleNumberII;
+package com.leetcode.singleNumberII;
 
 // AC - Time:O(n), Space: O(1)
 public class Solution {

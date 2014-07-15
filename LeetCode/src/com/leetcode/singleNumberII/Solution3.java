@@ -1,4 +1,4 @@
-package com.leetcode.SingleNumberII;
+package com.leetcode.singleNumberII;
 
 import java.util.HashSet;
 import java.util.Set;
