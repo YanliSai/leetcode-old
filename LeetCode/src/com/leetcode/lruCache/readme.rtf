@@ -1,0 +1,29 @@
+LRU Cache 13.2% HASH http://oj.leetcode.com/problems/lru-cache/ 
+一、原题目内容
+Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: get and set.
+
+get(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
+set(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
+
+
+
+二、中文题目内容
+设计一种数据结构实现最少使用页面置换算法(LRU),使其支持以下操作：
+
+get(key),如果key存在，则返回key对应的value值，如果不存在key，返回-1；
+
+set(key,value),如果key存在，则将值更新为value；如果key不存在且容量还有多余，则增加一个(key,value),如果容量不足，则按照LRU算法，首先删除一个(key,value),再加入。
+
+                  
+
+三、数据结构、算法设计
+
+Solution: (optimal) 继承LinkedHashmap，使用access-order标志位，并重写removeEldestEnttry(); Time: get()和set（）都是O(1)
+“LinkedHashMap恰好是通过双向链表实现的java集合类，它的一大特点是，以当某个位置被命中，它就会通过调整链表的指向，将该位置调整到头位置，新加入的内容直接放在链表头，如此一来，最近被命中的内容就向链表头移动，需要替换时，链表最后的位置就是最近最少使用的位置。关于 LinkedHashMap 的具体实现，可以参考此文：LinkedHashMap的实现原理。” 引自“http://www.acmerblog.com/leetcode-lru-cache-lru-5745.html”
+
+Solution2: (optimal) 用LinkedHashMap()默认构造函数（insertion-order），插入（默认查到最后）时间为O(1)，删除第一个（遍历到第一个）时间也为O(1)
+
+“这是一道非常综合的题目，主要应用在操作系统的资源管理中。
+按照题目要求，要实现get和set功能，为了满足随机存储的需求我们首先想到的一般是用数组，如果用链表会有O(n)的访问时间。然而他又有另一个条件就是要维护least used的队列，也就是说经常用的放在前面，用的少的放在后面。这样当资源超过cache的容积的时候就可以把用得最少的资源删掉。这就要求我们要对节点有好的删除和插入操作，这个要求又会让我们想到用链表，因为数组的删除和插入是O(n)复杂度的。
+那么我们能不能维护一个数据结构使得访问操作和插入删除操作都是O(1)复杂度的呢？答案是肯定的。这个数据结构比较复杂，是用一个hash表加上一个双向链表来实现。基本思路是这样的，用一个hash表来维护结点的位置关系，也就是hash表的key就是资源本身的key，value是资源的结点（包含key和value的信息）。然后把结点维护成一个双向链表构成的队列，这样子如果我们要访问某一个结点，那么可以通过hash表和key来找到结点，从而取到相应的value。而当我们想要删除或者插入结点时，我们还是通过hash表找到结点，然后通过双向链表和队列的尾结点把自己删除同时插入到队尾。通过hash表访问结点我们可以认为是O(1)的操作（假设hash函数足够好），然后双向链表的插入删除操作也是O(1)的操作。如此我们便实现了用O(1)时间来完成所有LRU cache的操作。空间上就是对于每一个资源有一个hash表的的项以及一个对应的结点（包含前后指针和资源的<key, value>）。”
+引用自“http://blog.csdn.net/linhuanmars/article/details/21310633”
