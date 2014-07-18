@@ -5,8 +5,8 @@ import java.util.Map;
 
 // AC - Time: get() and set(): O(1)
 public class LRUCache extends LinkedHashMap<Integer, Integer> {
-	private static final long serialVersionUID = 1L; // super class is Serializable
-	int size;
+    private static final long serialVersionUID = 1L; // super class is Serializable
+    int size;
     
     public LRUCache(int capacity) {
         super(16, 0.75F, true); // Set access_order to true

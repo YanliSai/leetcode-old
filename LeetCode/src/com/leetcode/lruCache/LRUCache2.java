@@ -2,8 +2,9 @@ package com.leetcode.lruCache;
 
 import java.util.LinkedHashMap;
 
+// AC - O(1) for get() and set()
 public class LRUCache2 {
-	int size;
+    int size;
     LinkedHashMap<Integer, Integer> map;
     
     public LRUCache2(int capacity) {
